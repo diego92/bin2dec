@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import isBinaryString from "validate.io-binary-string";
 
 export const Bin2DecApp = () => {
   const [binaryNumber, setBinaryNumber] = useState("");
@@ -13,7 +14,13 @@ export const Bin2DecApp = () => {
   }, [binaryNumber]);
 
   const handleChangeBinaryNumber = ({ target }) => {
-    setBinaryNumber(target.value);
+    if (isBinaryString(target.value)) {
+      setBinaryNumber(target.value);
+    }
+
+    if (!target.value) {
+      setBinaryNumber("");
+    }
   };
 
   return (
