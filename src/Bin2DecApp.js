@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import isBinaryString from "validate.io-binary-string";
 
 export const Bin2DecApp = () => {
@@ -24,21 +24,27 @@ export const Bin2DecApp = () => {
   };
 
   return (
-    <div className="container-fluid">
-      <div className=" text-white flex-column" style={{ height: "100vh" }}>
-        <section className="d-flex justify-content-center align-items-center flex-column h-75">
-          <h1 className="mb-5">Bin2Dec Calculator</h1>
+    <div className="bg-primary bg-gradient" style={{ height: "100vh" }}>
+      <header className="d-flex justify-content-center pt-4">
+        <h1 className="fst-italic text-white">Bin2Dec Calculator</h1>
+      </header>
+      <div className="container h-75 d-flex justify-content-center align-items-center">
+        <section className="text-center">
           <input
-            className="form-control w-50 mb-2 fw-bold"
+            className="form-control fw-bold"
             onChange={handleChangeBinaryNumber}
             value={binaryNumber}
           />
-          <p className="fs-3 fw-bold">{decimalNumber}</p>
+          <h3 className="fw-bold mt-4 text-white">{decimalNumber}</h3>
         </section>
-        <footer className="text-center">
-          <p>Realizado por Diego</p>
-        </footer>
       </div>
+      {/* <footer className="bg-secondary bg-gradient text-center fixed-bottom text-white">
+        <p>Realizado por Diego</p>
+      </footer> */}
+      {/* <div className=" text-white flex-column" style={{ height: "100vh" }}>
+        
+        
+      </div> */}
     </div>
   );
 };
